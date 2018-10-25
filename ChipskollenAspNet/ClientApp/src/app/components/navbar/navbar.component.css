@@ -1,0 +1,16 @@
+#top-navbar{
+    height: 100%;
+    /* background-color: rgb(22, 182, 182);
+
+    display: flex;
+    justify-content: space-between; */
+}
+#site-navbar{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#nav-logo{
+    color:rgb(233, 207, 121);
+    font-size: 1.2em;
+}

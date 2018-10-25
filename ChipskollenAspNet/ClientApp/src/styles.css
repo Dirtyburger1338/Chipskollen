@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+body{
+    margin:0;
+    color:white;
+    background-color: #ff7a09;
+    font-size: 16px;
+}
+p{
+    margin:0;
+}
+.bg-white{
+    background-color: white;
+}
+.bg-smokey{
+    background-color: rgb(241, 241, 241);
+}
+.bg-orange{
+    background-color: #ff7a09;
+}
+.bg-darkorange{
+    background-color: #e96b00;
+}
+.rounded{
+    border-radius:25px;
+}
+.p-10{padding:10px}
+.p-15{padding:15px}
+.p-20{padding:20px}

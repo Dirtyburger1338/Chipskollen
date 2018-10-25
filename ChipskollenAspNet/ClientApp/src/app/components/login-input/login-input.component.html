@@ -1,0 +1,28 @@
+<!-- <form (submit)="loginUser($event)">
+    <input type="text" placeholder="username">
+    <input type="password" placeholder="password">
+    <input type="submit" value="submit">
+</form> -->
+
+
+
+  <div class="login-form">
+
+      <form (submit)="loginUser($event, inputEmail.value, inputPw.value)">
+      <mat-form-field>
+          <input #inputEmail matInput type="email" placeholder="Enter your email" value="admin">
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input #inputPw matInput placeholder="Enter your password" value="admin">
+        </mat-form-field>               
+            <button mat-button type="submit">Login</button>   
+        </form>
+        
+        <div *ngIf="!processing;else loading">
+            {{loginStatus}}<mat-icon>home</mat-icon>
+        </div>
+
+    </div>
+
+    <ng-template #loading>Laddar...</ng-template>

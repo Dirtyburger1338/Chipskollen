@@ -1,0 +1,29 @@
+
+#page-navbar{
+    height: 95px;
+    position: fixed;
+    width: 100vw;
+}
+#page-content{
+    display: flex;
+    justify-content: center;
+    padding:130px 170px 20px;
+    background-color: #ff7a09;
+}
+#page-inner{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1100px){
+    #page-inner{
+        max-height: 95%;
+    }
+    #page-content{
+        padding:130px 10px 20px;
+    }
+}
+@media only screen and (max-width: 1400px){
+    #page-content{
+        padding:150px 10px 20px;
+    }
+}

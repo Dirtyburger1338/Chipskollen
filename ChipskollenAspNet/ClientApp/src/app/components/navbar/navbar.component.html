@@ -1,0 +1,23 @@
+
+
+
+<div id="top-navbar">
+    
+    <mat-toolbar id="site-navbar"  color="warn">
+        <span>
+            <button mat-button   routerLink="/Hem" routerLinkActive="active" id="nav-logo">Chipskollen</button>
+            <button mat-button   routerLink="/Hem" routerLinkActive="active">Hem</button>
+            <button mat-button   routerLink="/Snacks" routerLinkActive="active">Snacks</button>
+            <button mat-button  *ngIf="loggedIn"routerLink="/Profil" routerLinkActive="active">Profil</button>
+            
+        </span>
+        <span>
+            {{loggedIn}}
+            <button mat-button  *ngIf="loggedIn"routerLink="/Admin" routerLinkActive="active">Admin</button>
+            <button mat-button *ngIf="!loggedIn" (click)="openDialog()">Login</button>
+            <button mat-button *ngIf="loggedIn" (click)="logout()">logout</button>
+        </span>
+    </mat-toolbar>
+    
+    
+</div>
