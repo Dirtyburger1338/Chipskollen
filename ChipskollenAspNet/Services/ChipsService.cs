@@ -53,6 +53,7 @@ public class ChipsService {
         chipsList.Add(temp2);
         chipsList.Add(temp3);
         
+        return chipsList;
 
     }
 }
