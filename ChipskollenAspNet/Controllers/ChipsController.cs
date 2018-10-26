@@ -17,8 +17,8 @@ namespace ChipskollenAspNet.Controllers
         {
             return _ChipsService.getAllChips();
 
-            }
-            
-        }  
-    }
+        }
+        
+    }  
 }
+
