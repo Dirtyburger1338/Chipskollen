@@ -22,7 +22,7 @@ namespace ChipskollenAspNet.Controllers
                 var result = _repository.GetChips();
                 if (result == null)
                 {
-                    NotFound("No chips found.");
+                    return NotFound("No chips found.");
                 }
 
                 return Ok(result);
@@ -41,7 +41,7 @@ namespace ChipskollenAspNet.Controllers
                 var result = _repository.GetChips(chipsId);
                 if (result == null)
                 {
-                    NotFound($"No chips found with id {chipsId}.");
+                    return NotFound($"No chips found with id {chipsId}.");
                 }
 
                 return Ok(result);
