@@ -1,24 +1,55 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ChipsNameSpace;
+using ChipskollenAspNet.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ChipskollenAspNet.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/chips")]
     public class ChipsController : Controller
-    {    
-        ChipsService _ChipsService = new ChipsService();
+    {
+        private IChipsRepository _repository;
 
-        [HttpGet("[action]")]
-        public IEnumerable<Chips> getChips()
+        public ChipsController(IChipsRepository repository)
         {
-            return _ChipsService.getAllChips();
-
+            _repository = repository;
         }
-        
+
+        [HttpGet()]
+        public IActionResult GetChips()
+        {
+            try
+            {
+                var result = _repository.GetChips();
+                if (result == null)
+                {
+                    NotFound("No chips found.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Something happened while handling your request.");
+            }
+        }
+
+        [HttpGet("{chipsId}")]
+        public IActionResult GetChips(int chipsId)
+        {
+            try
+            {
+                var result = _repository.GetChips(chipsId);
+                if (result == null)
+                {
+                    NotFound($"No chips found with id {chipsId}.");
+                }
+
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Something happened while handling your request.");
+            }
+        }
     }  
 }
-
