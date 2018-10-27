@@ -13,8 +13,10 @@ export class RouteGuardService {
 
         if (!this.auth.isLoggedin) {          
             this.router.navigate(['']);
+            console.log("not logged in");
             return false;
         }
+        console.log("logged in");
         return true;
     }
 }

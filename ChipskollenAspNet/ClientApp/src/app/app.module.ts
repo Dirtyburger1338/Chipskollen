@@ -16,13 +16,14 @@ import { SnacksComponent } from './pages/snacks/snacks.component';
 
 import { AuthService } from './services/auth.service';
 import { RouteGuardService } from './services/route-guard.service';
+import { dataAccessService } from './services/data-access.service';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'Hem', component:HomeComponent},
     { path: 'Profil', component: ProfileComponent, canActivate: [RouteGuardService]},
     { path: 'Admin', component: AdminComponent, canActivate: [RouteGuardService]},
-    { path: 'Snacks', component: SnacksComponent, canActivate: [RouteGuardService]},
+    { path: 'Snacks', component: SnacksComponent},
     {path: '**', redirectTo: ''}
    ];
 
@@ -46,7 +47,9 @@ const routes: Routes = [
     
   ],
   entryComponents: [LoginInputComponent],
-  providers: [RouteGuardService],
+  providers: [
+      RouteGuardService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

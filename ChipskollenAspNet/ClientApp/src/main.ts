@@ -7,7 +7,8 @@ import { environment } from './environments/environment';
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
-
+const baseUrl = getBaseUrl();
+console.log(baseUrl);
 const providers = [
   { provide: 'BASE_URL', useFactory: getBaseUrl, deps: [] }
 ];

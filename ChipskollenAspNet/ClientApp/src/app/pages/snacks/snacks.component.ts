@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { dataAccessService } from '../../services/data-access.service';
+import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 @Component({
   selector: 'app-snacks',
@@ -6,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./snacks.component.css']
 })
 export class SnacksComponent implements OnInit {
-
-  constructor() { 
+    chipsList:any[] = [];
+  constructor(private _dao : dataAccessService) { 
    
   }
 
   ngOnInit() {
+      this._dao.getAllChips().subscribe((data:any[]) => {
+        console.log(data);
+        this.chipsList = data; 
+      });
   }
 
 }

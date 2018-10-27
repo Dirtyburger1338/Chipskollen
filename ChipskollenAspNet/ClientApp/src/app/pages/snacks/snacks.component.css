@@ -1,0 +1,35 @@
+#snacks-wrapper{
+}
+.chips-panel-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.chips-panel-header > div{
+    width: 33%;
+}
+.chips-panel-content{
+    height: 250px;
+    display: flex;
+}
+.chips-panel-content-image > img{
+    height: 250px;
+}
+.chips-panel-content-details {
+    flex:auto;    
+    display:flex;
+}
+.chips-panel-content-details > div {
+  width: 30%;
+}
+.chips-panel-content-details > div:last-child {
+    width: 10%;
+  }
+.chips-panel-content div{
+    border:1px solid lightgray;
+}
+.chips-card{
+    margin:0 auto;
+    max-width: 300px;
+
+}
