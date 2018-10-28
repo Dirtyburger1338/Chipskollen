@@ -1,15 +1,18 @@
+using ChipskollenAspNet.Enums;
 using System;
+
 namespace ChipsNameSpace
 {
     public class Chips
     {
-    public string name {get;set;}
-    public string brand {get;set;}
-    public string imageURL {get;set;}
-    public DateTime releaseDate {get;set;}
-    public bool limitedEdition {get;set;}
-    public DateTime limitedStart {get;set;}
-    public DateTime limitedEnd {get;set;}
-    public NutritiveValue nutritiveValue {get;set;}
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public Brand Brand { get; set; }
+        public string ImageUrl { get; set; }
+        public DateTime ReleaseDate { get; set; }
+        public bool LimitedEdition { get; set; }
+        public DateTime LimitedStart { get; set; }
+        public DateTime LimitedEnd { get; set; }
+        public NutritiveValue NutritiveValue { get; set; }
     }
 }
