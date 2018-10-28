@@ -1,22 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
+
+import { map} from 'rxjs/operators';
+import { UserStatusService } from './user-status.service';
 
 @Injectable()
 export class RouteGuardService {
     
-    constructor(public auth: AuthService, public router: Router) {}
+    constructor(private _userStatus:UserStatusService, public router: Router) {}
     
     
     
-    canActivate(): boolean {
-
-        if (!this.auth.isLoggedin) {          
-            this.router.navigate(['']);
-            console.log("not logged in");
+    canActivate():boolean{     
+        console.log("canactivate?");
+        if (this._userStatus.isUserLoggedIn){
+            console.log("ctruie");
+            return true;
+        }
+        else{
+            console.log("false");
             return false;
         }
-        console.log("logged in");
-        return true;
+    
     }
+    
+    
 }

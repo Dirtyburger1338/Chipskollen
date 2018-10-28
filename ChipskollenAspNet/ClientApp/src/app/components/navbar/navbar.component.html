@@ -11,8 +11,7 @@
             <button mat-button  *ngIf="loggedIn"routerLink="/Profil" routerLinkActive="active">Profil</button>
             
         </span>
-        <span>
-            {{loggedIn}}
+        <span>          
             <button mat-button  *ngIf="loggedIn"routerLink="/Admin" routerLinkActive="active">Admin</button>
             <button mat-button *ngIf="!loggedIn" (click)="openDialog()">Login</button>
             <button mat-button *ngIf="loggedIn" (click)="logout()">logout</button>

@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { LoginInputComponent } from '../login-input/login-input.component';
-import { AuthService } from '../../services/auth.service';
-import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-
+import { AuthService } from "angularx-social-login";
+import { SocialUser } from "angularx-social-login";
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,31 +11,29 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-    loggedIn:boolean = false;
-    constructor(public dialog: MatDialog, private auth:AuthService, private user:UserService, private router:Router) {
+    //loggedIn:boolean = false;
+    private user: SocialUser;
+    private loggedIn: boolean;
 
-        this.auth.loggedInStatus.subscribe((authenticated : boolean) => {
-            console.log(authenticated);
-            this.loggedIn = this.auth.isLoggedin
-        });
+    constructor(public dialog: MatDialog, private authService: AuthService, private router:Router) {
+
+        // this.auth.loggedInStatus.subscribe((authenticated : boolean) => {
+        //     console.log(authenticated);
+        //     this.loggedIn = this.auth.isLoggedin
+        // });
 
     }
 
   ngOnInit() {
-      this.loggedIn = this.auth.isLoggedin
+    this.authService.authState.subscribe((user) => {
+        this.user = user;
+        this.loggedIn = (user != null);
+      });
+    //   this.loggedIn = this.auth.isLoggedin
   }
   logout(){
-      this.user.logout().subscribe((data)=>{
-          console.log(data);
-        if(data.success){
-            this.router.navigate(['']);
-            localStorage.removeItem('loggedIn');
-            this.loggedIn = false;
-        }
-        else{
-            console.log("Något blev fel");
-        }
-      })
+    this.authService.signOut();
+
   }
 
   

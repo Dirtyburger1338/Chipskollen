@@ -1,44 +1,42 @@
 <div id="home-wrapper" class="rounded p-15">
+ 
+  <div id="home-news">
+    <div *ngFor="let item of [1,2,3]" class="news-card bg-darkorange rounded">
 
-    <div id="home-news">
-        <div *ngFor="let item of [1,2,3]" class="news-card bg-darkorange rounded">
-            
-            <div class="news-card-img-wrapper">
-                <div class="news-card-img ">
-                    
-                </div>
-            </div>
-            <div class="news-card-info">
-                <div><strong>Höstskörd</strong></div>
-                <div>Nu har estrella släppt nytt skit. Den smakar rödlök och skörbjugg utan att få för mycket sötma. Chipsen bör ätan direkt ut kylen</div>
-                <div><button mat-flat-button color="warn" class="news-card-btn">Recensera här!</button></div>
-            </div> 
-            
-        
+      <div class="news-card-img-wrapper">
+        <div class="news-card-img ">
+
         </div>
+      </div>
+      <div class="news-card-info">
+        <div><strong>Höstskörd</strong></div>
+        <div>Nu har estrella släppt nytt skit. Den smakar rödlök och skörbjugg utan att få för mycket sötma. Chipsen bör ätan direkt ut kylen</div>
+        <div><button mat-flat-button color="warn" class="news-card-btn">Recensera här!</button></div>
+      </div>
+
+
     </div>
+  </div>
 
-
-
-    <div id="home-signup">        
-        <div>
-            <p>Vi vill samla alla chips- och snacksälskare på ett och samma ställe!</p>
-            <p>Här kan du dela din snacksentusiasm med andra gourmander</p>
-        </div>
-        <div id="home-signup-btn-group">
-            <div>
-                <button mat-flat-button color="warn" class="home-signup-btn" (click)="login()">Logga in</button>  
-            </div>
-            <div>
-                <button mat-flat-button color="warn" class="home-signup-btn">Bli medlem</button>  
-            </div>
-        </div>
-        <div>
-            <div class="home-icon"></div>
-            <div class="home-icon"></div>
-            <div class="home-icon"></div>
-        </div>
+  <div id="home-signup">
+    <div>
+      <p>Vi vill samla alla chips- och snacksälskare på ett och samma ställe!</p>
+      <p>Här kan du dela din snacksentusiasm med andra gourmander</p>
     </div>
-    
-    
+    <div id="home-signup-btn-group">
+      <div>
+        <button mat-flat-button color="warn" class="home-signup-btn" (click)="login()">Logga in</button>
+      </div>
+      <div>
+        <button mat-flat-button color="warn" class="home-signup-btn">Bli medlem</button>
+      </div>
+    </div>
+    <div>
+      <div class="home-icon"></div>
+      <div class="home-icon"></div>
+      <div class="home-icon"></div>
+    </div>
+  </div>
+
+
 </div>
