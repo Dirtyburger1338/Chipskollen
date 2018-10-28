@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-
+import { AuthService, GoogleLoginProvider } from 'angularx-social-login';
 @Component({
     selector: 'app-login-input',
     templateUrl: './login-input.component.html',
@@ -12,30 +11,18 @@ export class LoginInputComponent implements OnInit {
     processing : boolean = false;
     loginStatus:string = "";
 
-    constructor(private auth:AuthService) { 
-        
+    constructor(private _authService : AuthService) {         
     }
     
     ngOnInit() {
     }
     
-    loginUser(event:any, email:any,password:any){
-        this.processing = true;
-        this.loginStatus = "";
-        event.preventDefault();
-        this.auth.login(email,password).subscribe(data => {
-            console.log(data);
-            this.auth.setUserStatus(data.success);
-            this.processing = false;
-
-            if(data.success){
-                this.loginStatus = "Inloggning lyckad!"
+    signInWithGoogle() : void{                
+        this._authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+            (userData) => { //on success
+               //this will return user data from google. What you need is a user token which you will send it to the server
+                console.log(userData);
             }
-            else{
-                this.loginStatus = "Inloggning misslyckad.."
-            }
-        });
-        
-        
+        );
     }
 }
