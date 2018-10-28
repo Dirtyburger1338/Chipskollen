@@ -15,7 +15,6 @@ import { AdminComponent } from './pages/admin-dashboard/admin.component';
 import { SnacksComponent } from './pages/snacks/snacks.component';
 
 import { RouteGuardService } from './services/route-guard.service';
-import { dataAccessService } from './services/data-access.service';
 
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from "angularx-social-login";

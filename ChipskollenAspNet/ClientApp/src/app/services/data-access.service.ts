@@ -10,7 +10,7 @@ const baseUrl = location.origin + "/api/";
 })
 
 
-export class dataAccessService {
+export class DataAccessService {
     
     constructor(private http:HttpClient, ) {}    
   

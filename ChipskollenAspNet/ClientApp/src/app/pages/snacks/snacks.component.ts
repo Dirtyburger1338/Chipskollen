@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { dataAccessService } from '../../services/data-access.service';
+import { DataAccessService } from '../../services/data-access.service';
 import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
 @Component({
@@ -9,7 +9,7 @@ import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 })
 export class SnacksComponent implements OnInit {
     chipsList:any[] = [];
-  constructor(private _dao : dataAccessService) { 
+  constructor(private _dao : DataAccessService) { 
    
   }
 
