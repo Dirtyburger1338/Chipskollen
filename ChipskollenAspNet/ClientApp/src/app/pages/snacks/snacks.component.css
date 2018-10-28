@@ -1,4 +1,5 @@
 #snacks-wrapper{
+    position: relative;
 }
 .chips-panel-header{
     display: flex;
